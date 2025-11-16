@@ -137,6 +137,11 @@ function excluirLivro(id) {
     livros = livros.filter(l => l.id != id);
     salvarLocal();
     render();
+
+    if (idInput.value == id) {
+        resetarFormulario();
+    }
+
 }
 
 // ---------- Resetar Formulário ----------
@@ -168,3 +173,4 @@ if (carregarLocal()) {
 // Permitir funções globais
 window.editarLivro = editarLivro;
 window.excluirLivro = excluirLivro;
+
